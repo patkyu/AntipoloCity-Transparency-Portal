@@ -1,0 +1,179 @@
+/* =============================================================
+   Theme: Antipolo City. Blue and white, the city's colours.
+   Layout: a glass header over a photo hero, a bento of figures,
+   then the BetterGov.ph ledger, set in rounded panels.
+
+   Bricolage Grotesque speaks. Geist works. Instrument Serif
+   italic marks a word that matters. Geist Mono labels.
+   ============================================================= */
+
+:root {
+  /* Paper and ink: white, with an Antipolo-blue cast in every neutral */
+  --paper: #ffffff;
+  --paper-2: #f3f7ff;
+  --paper-3: #e7eefc;
+  --rule: #cfdaf0;
+  --rule-soft: #e4ebf7;
+  --ink: #081736;
+  --ink-2: #22355d;
+  --ink-3: #52658c;
+  --ink-mute: #8696b6;
+
+  /* Antipolo blue */
+  --accent: #1546d4;
+  --accent-deep: #0b2b8c;
+  --accent-soft: #e4ecff;
+  --sky: #7fb0ff;
+  --navy: #071a4a;        /* bands that stay dark in both themes */
+  --brand: #1546d4;       /* solid Antipolo blue under white text, both themes */
+  --on-navy: #ffffff;
+
+  /* Meaning, kept apart from the accent */
+  --positive: #1f7a4d;
+  --negative: #c23a2b;
+  --neutral: #8a7a52;
+  --warn-ink: #7a5410;
+  --warn-bg: #fff6e3;
+  --warn-rule: #e9c27a;
+
+  --shadow: 0 1px 2px rgba(8, 23, 54, 0.06), 0 12px 32px -12px rgba(8, 23, 54, 0.18);
+  --glass: rgba(255, 255, 255, 0.78);
+
+  /* Type roles */
+  --font-hero: "Bricolage Grotesque", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-serif: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --font-body: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Layout */
+  --page: 1240px;
+  --gutter: 32px;
+  --radius: 22px;
+  --radius-sm: 12px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #050d22;
+    --paper-2: #0a1630;
+    --paper-3: #112147;
+    --rule: #1f3466;
+    --rule-soft: #15274f;
+    --ink: #eef3ff;
+    --ink-2: #c4d1ee;
+    --ink-3: #8ea1cb;
+    --ink-mute: #64779f;
+    --accent: #6f9bff;
+    --accent-deep: #a9c2ff;
+    --accent-soft: #10275e;
+    --sky: #7fb0ff;
+    --navy: #0a1f57;
+    --positive: #4cc28a;
+    --negative: #ff7a6a;
+    --neutral: #c9b27d;
+    --warn-ink: #f2cf8a;
+    --warn-bg: #2a2110;
+    --warn-rule: #6b5320;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px -12px rgba(0, 0, 0, 0.6);
+    --glass: rgba(5, 13, 34, 0.74);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #050d22;
+  --paper-2: #0a1630;
+  --paper-3: #112147;
+  --rule: #1f3466;
+  --rule-soft: #15274f;
+  --ink: #eef3ff;
+  --ink-2: #c4d1ee;
+  --ink-3: #8ea1cb;
+  --ink-mute: #64779f;
+  --accent: #6f9bff;
+  --accent-deep: #a9c2ff;
+  --accent-soft: #10275e;
+  --sky: #7fb0ff;
+  --navy: #0a1f57;
+  --positive: #4cc28a;
+  --negative: #ff7a6a;
+  --neutral: #c9b27d;
+  --warn-ink: #f2cf8a;
+  --warn-bg: #2a2110;
+  --warn-rule: #6b5320;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px -12px rgba(0, 0, 0, 0.6);
+  --glass: rgba(5, 13, 34, 0.74);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root { min-height: 100svh; display: flex; flex-direction: column; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--accent-deep); }
+
+button, input, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+
+h1, h2, h3 {
+  font-family: var(--font-hero);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
+  margin: 0;
+  text-wrap: balance;
+}
+em.serif, .serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* Mono labels: metadata only, never sentences. */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 12px;
+}
+.eyebrow .sep { color: var(--ink-mute); padding: 0 6px; }
+.label {
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.muted { color: var(--ink-3); }
+
+/* The BetterGov.ph logo: blue on light, white on dark. */
+.bg-logo-dark { display: none; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .bg-logo-light { display: none; }
+  :root:not([data-theme="light"]) .bg-logo-dark { display: block; }
+}
+:root[data-theme="dark"] .bg-logo-light { display: none; }
+:root[data-theme="dark"] .bg-logo-dark { display: block; }
