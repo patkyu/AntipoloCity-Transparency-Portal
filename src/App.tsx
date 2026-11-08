@@ -28,7 +28,9 @@ export default function App() {
         <Route path="/districts" element={<Navigate to="/#offices" replace />} />
         <Route path="/gaa" element={<Enacted />} />
         <Route path="/about" element={<About />} />
-        <Route path="/para-sa-tao" element={<People />} />
+        <Route path="/para-sa-bayan" element={<People />} />
+        {/* The page was first published as "Para sa Tao"; shared links still land on it. */}
+        <Route path="/para-sa-tao" element={<Navigate to="/para-sa-bayan" replace />} />
         <Route path="/projects/:dataset/:id" element={<Project />} />
         <Route
           path="*"

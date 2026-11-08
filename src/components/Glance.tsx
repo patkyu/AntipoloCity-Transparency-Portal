@@ -99,9 +99,9 @@ export function Glance({ projects, summary, words, onStatus, status }: {
 
   return (
     <section className="section glance" aria-labelledby="glance-h">
-      <Link to="/para-sa-tao" className="callout">
+      <Link to="/para-sa-bayan" className="callout">
         <span className="callout-tag">Bago rito? · New here?</span>
-        <span className="callout-h">Para sa Tao: <em className="serif">ang budget, sa simpleng salita</em></span>
+        <span className="callout-h">Para sa Bayan: <em className="serif">ang budget, sa simpleng salita</em></span>
         <span className="callout-sub">Mga larawan at paliwanag sa Filipino: saan napupunta ang pera, para sa barangay mo, at ano ang puwede mong gawin.</span>
         <span className="callout-go" aria-hidden="true">→</span>
       </Link>

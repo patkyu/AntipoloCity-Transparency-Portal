@@ -6,7 +6,7 @@ import { date } from '../lib/format';
 import { asset, NATIONAL_URL, SOURCE_CODE_URL } from '../lib/links';
 
 const NAV = [
-  { to: '/para-sa-tao', hash: '', label: 'Para sa Tao' },
+  { to: '/para-sa-bayan', hash: '', label: 'Para sa Bayan' },
   { to: '/', hash: '', label: '2027 projects' },
   { to: '/', hash: '#offices', label: 'Offices' },
   { to: '/gaa', hash: '', label: '2020–2026' },

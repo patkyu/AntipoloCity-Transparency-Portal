@@ -1,5 +1,5 @@
 /**
- * /para-sa-tao: the budget in plain Filipino, with pictures.
+ * /para-sa-bayan: the budget in plain Filipino, with pictures.
  * Counts only lines whose title names Antipolo, so projects of the shared
  * DPWH office in nearby towns are left out of every figure here.
  */
