@@ -19,13 +19,13 @@ const BLOCK = 10_000_000;
 
 export default function People() {
   const { scope } = usePortal();
-  useTitle('Para sa Tao · Antipolo Transparency');
+  useTitle('Para sa Bayan · Antipolo Transparency');
   return (
     <main className="page main people">
       <PhotoHead
         photo="photos/manila-view.webp"
         alt="Ang tanaw mula sa Sumulong Highway, Antipolo, pababa sa Metro Manila."
-        eyebrow={<>Para sa Tao<span className="sep">·</span>For the People<span className="sep">·</span>Sa simpleng salita</>}
+        eyebrow={<>Para sa Bayan<span className="sep">·</span>For the People<span className="sep">·</span>Sa simpleng salita</>}
         title={<>Ang budget ng Antipolo, <em className="serif">ipinaliwanag nang simple.</em></>}
       >
         <p>
